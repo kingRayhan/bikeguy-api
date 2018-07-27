@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'RadioController@index');
+Route::view('/', 'home')->middleware('auth');
 
 Route::auth();
 

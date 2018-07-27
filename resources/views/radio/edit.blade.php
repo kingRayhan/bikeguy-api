@@ -1,4 +1,7 @@
 @extends('layouts.app')
+
+@section('title' , 'Edit Episod')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

@@ -1,48 +1,25 @@
 @extends('layouts.app')
 
+@section('header')
+    <style>
+        .api-card {
+            background: #FFF;
+            padding: 15px;
+            box-shadow: 0 0px 3px rgba(0,0,0,.25);
+        }
+    </style>
+@stop
+
+
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-10">
-            <div class="card">
-                <div class="card-header">Radio Contents</div>
-                <div class="card-body">
-                    <a href="{{ route('radio.create') }}" class="btn btn-success mb-2">Add new</a>
-
-                    <table class="table">
-                        <tr>
-                            <th width="10%">Episod #</th>
-                            <th>Topic</th>
-                            <th>Audio</th>
-                            <th width="15%">action</th>
-                        </tr>
-                        @foreach($episods as $episod)
-                        <tr>
-                            <td>{{ $episod->episod_no }}</td>
-                            <td>{{ $episod->topic }}</td>
-                            <td>
-                                <audio controls>
-                                  <source src="{{ $episod->audio_public }}" type="audio/mpeg">
-                                </audio>
-                            </td>
-                            <td>
-                                
-                                <a href="{{ route('radio.edit' , $episod->id) }}" class="btn btn-success">
-                                    <i class="fa fa-pencil"></i>
-                                </a>
-
-                                <form action="{{ route('radio.destroy' , $episod->id) }}" method="post" style="display: inline">
-                                    {{ csrf_field() }}
-                                    {{ method_field('DELETE') }}
-                                    <button type="submit" class="btn btn-danger">
-                                        <i class="fa fa-trash"></i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </table>
-                </div>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="api-card">
+                <h3>Radio</h3>
+                <a href="{{ route('episods.index') }}" target="_blank">{{ route('episods.index') }}</a>
+                <br>
+                <a href="{{ route('radio.index') }}" class="btn btn-success w-100 mt-2">Manage</a>
             </div>
         </div>
     </div>

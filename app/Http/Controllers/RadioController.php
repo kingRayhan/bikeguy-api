@@ -21,7 +21,7 @@ class RadioController extends Controller
     public function index()
     {
         $episods = Radio::latest()->get();
-        return view('home' , compact('episods'));
+        return view('radio.index' , compact('episods'));
     }
 
     /**
@@ -31,7 +31,7 @@ class RadioController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('radio.create');
     }
 
     /**
@@ -81,7 +81,7 @@ class RadioController extends Controller
      */
     public function edit(Radio $radio)
     {
-        return view('edit' , compact('radio') );
+        return view('radio.edit' , compact('radio') );
     }
 
     /**
