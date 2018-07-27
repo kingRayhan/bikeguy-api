@@ -21,7 +21,17 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    
+    <style>
+        .alert-danger {
+            color: #FFF;
+            background-color: #e74c3c;
+            border-color: #e74c3c;
+        }
+        .close {
+            color: #FFF;
+        }
+    </style>
 
     @yield('header')
 
@@ -86,6 +96,7 @@
                         @foreach ($errors->all() as $error)
                             <div class="alert alert-danger">
                                 {{ $error }}
+                                <a href="javascript:void(0)" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
                             </div>
                         @endforeach
                     </div>

@@ -26,8 +26,8 @@
                             <label for="audio">Audio</label>
                             <input type="file" name="audio" class="form-control" id="audio">
                         </div>
-                        <div class="form-group">
-                            <button type="submit">Save</button>
+                        <div class="form-group mb-0">
+                            <button type="submit" class="btn btn-success">Save</button>
                         </div>
                     </form>
 
